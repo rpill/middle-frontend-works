@@ -24,16 +24,8 @@ jobs:
       if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
-    - name: Check dist and node_modules in .gitignore
-      run: bash tests-second-floor/sprint_1/check_gitignore.sh
-    - name: Check npm run start existence
-      run: bash tests-second-floor/sprint_1/check_start.sh
-    - name: Check Parcel in start script
-      run: bash tests-second-floor/sprint_1/check_parcel.sh
-    - name: Check PORT 3000
-      run: bash tests-second-floor/sprint_1/check_port.sh
-    - name: Check routing
-      run: node tests-second-floor/sprint_1/check_routing.js
+    - name: Run the tests 
+      run: bash tests-second-floor/bin/sprint-1.sh
       
   sprint_2:
     runs-on: ubuntu-latest
@@ -52,25 +44,8 @@ jobs:
       if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
-    - name: Check dist and node_modules in .gitignore
-      run: bash tests-second-floor/sprint_1/check_gitignore.sh
-    - name: Check npm run start existence
-      run: bash tests-second-floor/sprint_1/check_start.sh
-    - name: Check Parcel in start script
-      run: bash tests-second-floor/sprint_1/check_parcel.sh
-    - name: Check PORT 3000
-      run: bash tests-second-floor/sprint_1/check_port.sh
-    - name: Check routing
-      run: node tests-second-floor/sprint_1/check_routing.js
-      # sprint 2 checks
-    - name: Check typescript in package.json
-      run: node tests-second-floor/sprint_2/check_typescript.js
-    - name: Check tsconfig required rules
-      run: node tests-second-floor/sprint_2/check_tsconfig.js
-    - name: Check eslint
-      run: node tests-second-floor/sprint_2/check_eslint.js
-    - name: Check stylelint
-      run: node tests-second-floor/sprint_2/check_stylelint.js
+    - name: Run the tests 
+      run: bash tests-second-floor/bin/sprint-2.sh
       
   sprint_3:
     runs-on: ubuntu-latest
@@ -89,8 +64,8 @@ jobs:
       if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
-    - name: Run the tests
-      run: bash tests-second-floor/sprint_3/run.sh
+    - name: Run the tests 
+      run: bash tests-second-floor/bin/sprint-3.sh
       
   sprint_4:
     runs-on: ubuntu-latest
@@ -109,5 +84,5 @@ jobs:
       if: ${{github.event.repository.private}}
     - name: Get testing lib
       run: set -eu && git clone -b refactor --single-branch https://github.com/rpill/tests-second-floor.git
-    - name: Run the tests
-      run: bash tests-second-floor/sprint_4/run.sh
+    - name: Run the tests 
+      run: bash tests-second-floor/bin/sprint-4.sh
