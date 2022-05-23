@@ -1,24 +1,23 @@
 name: Tests
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - '**'
+    tags:
+      - '**'
 
 
 jobs:
   sprint_1:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - name: Set up GitHub Actions
       uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - name: Сheck if the repository is private
       run: exit 1
       if: ${{github.event.repository.private}}
@@ -29,16 +28,13 @@ jobs:
       
   sprint_2:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - name: Set up GitHub Actions
       uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - name: Сheck if the repository is private
       run: exit 1
       if: ${{github.event.repository.private}}
@@ -49,16 +45,13 @@ jobs:
       
   sprint_3:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - name: Set up GitHub Actions
       uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - name: Сheck if the repository is private
       run: exit 1
       if: ${{github.event.repository.private}}
@@ -69,16 +62,13 @@ jobs:
       
   sprint_4:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - name: Set up GitHub Actions
       uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
     - name: Сheck if the repository is private
       run: exit 1
       if: ${{github.event.repository.private}}
